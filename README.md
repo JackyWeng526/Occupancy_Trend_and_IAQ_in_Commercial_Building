@@ -3,5 +3,5 @@ This repository aims to construct a model based on building automation system da
 
 The estimated occupancy pattern will validate with the data from the entrance gate.
 
-The results of this repository imply that CO2 sensors can be good occupancy detectors rather than only monitoring IAQ.
+The results of this repository imply that CO2 sensors are good occupancy detectors rather than only tools for monitoring IAQ.
 
