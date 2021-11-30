@@ -3,7 +3,7 @@ This repository aims to construct a model based on building automation system da
 
 The estimated occupancy pattern will validate with the data from the entrance gate.
 
-The results of this repository imply that CO2 sensors are good occupancy detectors rather than only tools for monitoring IAQ.
+The results of this repository imply that CO<sub>2</sub> sensors are good occupancy detectors rather than only tools for monitoring IAQ.
 
 Moreover, this model can advance the predictive IAQ control in buildings with such IoT networks in building automation system.
 
@@ -20,6 +20,10 @@ So, we tried to utilize the BA data with [Carbon Dioxide Predictor-Corrector](ht
 ## Carbon Dioxide Predictor-Corrector (Ref: EnergyPlus)
 The air mass balance equation for the change in zone air CO<sub>2</sub> concentration may be expressed as follows:
 ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
+
+We ignored some terms and import some default values to simplify the equation because of the following reasons:
+1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern parts in each floor, thus we assumed there is no zone exchange effect and ignored the second term in the right-hand side.
+2. 
 
 
 ## Input data
