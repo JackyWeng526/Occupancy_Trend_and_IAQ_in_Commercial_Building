@@ -36,4 +36,6 @@ With the equation and the following input data, we are able to reproduce the det
 
 ![CO2_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/CO2_data.PNG)
 
+![G](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG)
+
 ## 
