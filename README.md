@@ -17,7 +17,7 @@ The only support from local staff is providing the daily records of entrance and
 
 So, we try to utilize the BA data with [Carbon Dioxide Predictor-Corrector](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/carbon-dioxide-predictor-corrector.html#carbon-dioxide-predictor-corrector) originated from EnergyPlus simulator to reproduce the occupancy trend in the studying building.
 
-## Simplfied Occupancy Predictor-Corrector (Ref: EnergyPlus)
+## Simplfied Occupancy Predictor-Corrector (Ref: [EnergyPlus](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/index.html))
 The air mass balance equation for the change in zone air CO<sub>2</sub> concentration can be expressed as follows:
 ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
 
