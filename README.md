@@ -26,8 +26,9 @@ We ignore some terms and import some default values to simplify the equation bec
 2. The variables of CO<sub>2</sub> concentration are collected by BAS and coefficients in the equation will be solve by linear regression.
 
 Therefore, the simplified equation is demonstrated below:
-![occ balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
+![occ balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_balance_eq.PNG)
 
+With the equation and the following input data, we are able to reproduce the detailed occupancy history in the building.
 
 ## Input data
 
