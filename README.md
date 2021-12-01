@@ -51,7 +51,7 @@ The integrated daily occupancy of the whole building is validated by the entranc
 
 The preliminary outcome, with r<sup>2</sup> = 0.92 and MAE = 53.33 people, are plotted below.
 
-![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate.PNG)
+![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate_1.PNG)
 
 Where the details of each floor can be revealed from the reliable occupancy history data.
 
