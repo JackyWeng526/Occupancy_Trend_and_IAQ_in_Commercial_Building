@@ -13,7 +13,7 @@ The hourly occupancy schedule is the vital variable to conduct the predictive IA
 
 However, in this case, we have no head counting hardware in the field.
 
-The only support from local staff is providing the daily records of entrance and security gate.
+The only support from local staff is providing BAS data and the daily records of building operations.
 
 So, we try to utilize the BA data with [Carbon Dioxide Predictor-Corrector](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/carbon-dioxide-predictor-corrector.html#carbon-dioxide-predictor-corrector) originated from EnergyPlus simulator to reproduce the occupancy trend in the studying building.
 
@@ -23,7 +23,8 @@ The air mass balance equation for the change in zone air CO<sub>2</sub> concentr
 
 We ignore some terms and import some default values to simplify the equation because of the following reasons:
 1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each floor, thus we assume there is no zone exchange effect and ignore the second term in the right-hand side.
-2. The variables of CO<sub>2</sub> concentration are collected by BAS and coefficients in the equation will be solve by linear regression.
+2. The variables of CO<sub>2</sub> concentration are collected by BAS for differences calculation.
+3. The default coefficients is provided by EnergyPlus and ASHRAE 62.1. They will then be optimized by data-driven analysis and linear regression.
 
 Therefore, the simplified equation is demonstrated below:
 ![occ balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_balance_eq.PNG)
@@ -31,11 +32,15 @@ Therefore, the simplified equation is demonstrated below:
 With the equation and the following input data, we are able to reproduce the detailed occupancy history in the building.
 
 ## Input data
+The revelant dataset is originated from the existing BAS.
+
+We collect the data of AHUs and CO<sub>2</sub> sensors shown below.
 
 ![AHU_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/AHU_data.PNG)
 
 ![CO2_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/CO2_data.PNG)
 
-![G](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG)
+Also, we are fortunate to have the daily records of entrance gate released by local staff for data validation.
+![Gate Records](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG)
 
 ## 
