@@ -49,14 +49,21 @@ Through the Simplfied Occupancy Corrector (SOC), the hourly occupancy history of
 
 The integrated daily occupancy of the whole building is validated by the entrance gate records to optimize the SOC coefficients.
 
-The preliminary outcome, with r<sup>2</sup> = 0.92 and MAE = 53.33 people, are plotted below.
+The preliminary outcome, with r<sup>2</sup> = 0.94 and MAE = 35.1 people, are plotted below.
 
 ![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate_1.PNG)
 
-Where the details of each floor can be revealed from the reliable occupancy history data.
+Where the details of each floor can also be revealed from the reliable occupancy history data.
 
 ![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
 
 # Predicting Occupancy Trend
 Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
 
+We try both ANN method (by tensorflow) and GBDT method (by lightgbm) for predicting the future occupancy trend.
+
+![Occ_pred_model](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_pred_model.PNG)
+
+The algorithm, data quantity, variable selection, lag features, and future step of the target in this predictive occupancy model are currently optimized.
+
+The model proposed here can predict the hourly occupancy data for the next day based on the last 24-hour historical data.
