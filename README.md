@@ -1,4 +1,4 @@
-# Occupancy and IAQ prediction of a commercial building
+# Occupancy and IAQ Prediction of a Commercial Building
 This repository aims to construct a model based on building automation system data for occupancy pattern estimation.
 
 The estimated occupancy pattern will validate with the data from the entrance gate.
@@ -8,7 +8,7 @@ The results of this repository imply that CO<sub>2</sub> sensors are good occupa
 Moreover, this model can advance the predictive IAQ control in buildings with such IoT networks in building automation system (BAS).
 
 
-# Occupancy history
+# Occupancy History
 
 The hourly occupancy schedule is the vital variable to conduct the predictive IAQ control in buildings.
 
@@ -23,7 +23,7 @@ The air mass balance equation for the change in zone air CO<sub>2</sub> concentr
 ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
 
 We ignore some terms and import some default values to simplify the equation because of the following reasons:
-1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each floor, thus we assume there is no zone exchange effect and ignore the second term in the right-hand side.
+1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each office floor, thus we assume there is no zone exchange effect and ignore the second term in the right-hand side.
 2. The variables of CO<sub>2</sub> concentration are collected by BAS for differences calculation.
 3. The default coefficients is provided by EnergyPlus and ASHRAE 62.1. They will then be optimized by data-driven analysis and linear regression.
 
@@ -32,7 +32,7 @@ Therefore, the equation of the Simplfied Occupancy Corrector is demonstrated bel
 
 With this equation and the following input data, we are able to reproduce the detailed occupancy history in the building.
 
-## Input data
+## Input Data
 The revelant dataset is originated from the existing BAS.
 
 We collect the data of AHUs and CO<sub>2</sub> sensors shown below.
@@ -57,6 +57,7 @@ Where the details of each floor can also be revealed from the reliable occupancy
 
 ![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
 
+
 # Predicting Occupancy Trend
 Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
 
@@ -66,4 +67,32 @@ We try both ANN method (by tensorflow) and GBDT method (by lightgbm) for predict
 
 The algorithm, data quantity, variable selection, lag features, and future step of the target in this predictive occupancy model are currently optimized.
 
-The model proposed here can predict the hourly occupancy data for the next day based on the last 24-hour historical data.
+The optimal model proposed here can predict the hourly occupancy data for the next day based on the last 24-hour historical data. (As shown in the right part of the above figure.)
+
+
+# IAQ Prediction and Predictive Control Strategy Application
+By means of occupancy trend predictions, we can estimate how much outdoor air volume should be supplied to the office floor referring to ASHRAE 62.1. 
+
+Based on the OA estimation, we are able to produce a predictive control strategy of AHU frequency converter derived from occupancy trend predictions.
+
+Correspondingly, the predicted indoor CO<sub>2</sub> can also be calculated by the equations above. 
+
+(NO NEED to build another complicated model for CO<sub>2</sub> predictions!)
+
+The results are all demonstrated in the figure.
+
+![Predictive_Control_Analysis](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Predictive_Control_Analysis.PNG)
+
+As we can see, if we implement the dynamic predictive control strategy which lowers the AHU frequency, we can have energy-saving potentials of AHU operations without compromising  IAQ and occupants' health and productivity. (Thanks to instructions in ASHRAE 62.1.)
+
+Moreover, we regard that this study is innovative and extensible. 
+
+There are still many subjects in this study that can be investigated, discussed, and in-field validated in future work.
+
+
+# Authors
+- [@Jacky Weng](https://github.com/JackyWeng526)
+
+
+# Acknowledgement
+The module and the application here are just one of the sample works, not the real one in the field.
