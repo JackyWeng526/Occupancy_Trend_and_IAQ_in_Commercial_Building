@@ -7,6 +7,7 @@ The results of this repository imply that CO<sub>2</sub> sensors are good occupa
 
 Moreover, this model can advance the predictive IAQ control in buildings with such IoT networks in building automation system (BAS).
 
+
 # Occupancy history
 
 The hourly occupancy schedule is the vital variable to conduct the predictive IAQ control in buildings.
@@ -49,4 +50,13 @@ Through the Simplfied Occupancy Corrector (SOC), the hourly occupancy history of
 The integrated daily occupancy of the whole building is validated by the entrance gate records to optimize the SOC coefficients.
 
 The preliminary outcome, with r<sup>2</sup> = 0.92 and MAE = 53.33 people, are plotted below.
-![PP_estimation_0]()
+
+![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate.PNG)
+
+Where the details of each floor can be revealed from the reliable occupancy history data.
+
+![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
+
+# Predicting Occupancy Trend
+Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
+
