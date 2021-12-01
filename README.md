@@ -1,14 +1,16 @@
 # Occupancy and IAQ Prediction of a Commercial Building
-This repository aims to construct a model based on building automation system data for occupancy pattern estimation.
+This study aims to construct a model based on building automation system data for future occupancy pattern estimation.
 
-The estimated occupancy pattern will validate with the data from the entrance gate.
+The estimated hourly occupancy pattern can provide a chance of conducting a predictive control strategy for optimal outdoor air ventilation.
 
-The results of this repository imply that CO<sub>2</sub> sensors are good occupancy detectors rather than only tools for monitoring IAQ.
+This study demonstrates an effective way of conducting predictive ventilation control by a data-driven occupancy trend model.
 
-Moreover, this model can advance the predictive IAQ control in buildings with such IoT networks in building automation system (BAS).
+The results also imply that CO<sub>2</sub> sensors are good occupancy detectors rather than only tools for monitoring IAQ.
+
+Moreover, the proposed model can advance the predictive IAQ control in buildings with such IoT networks in building automation system (BAS).
 
 
-# Occupancy History
+# Methodology
 
 The hourly occupancy schedule is the vital variable to conduct the predictive IAQ control in buildings.
 
@@ -18,7 +20,7 @@ The only support from local staff is providing BAS data and the daily records of
 
 So, we try to utilize the BA data with [Carbon Dioxide Predictor-Corrector](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/carbon-dioxide-predictor-corrector.html#carbon-dioxide-predictor-corrector) originated from EnergyPlus simulator to reproduce the occupancy trend in the studying building.
 
-## Simplfied Occupancy Corrector (Ref: [EnergyPlus](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/index.html))
+## Simplfied Occupancy Corrector for Occupancy History (Ref: [EnergyPlus](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/index.html))
 The air mass balance equation for the change in zone air CO<sub>2</sub> concentration can be expressed as follows:
 ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
 
@@ -44,7 +46,7 @@ We collect the data of AHUs and CO<sub>2</sub> sensors shown below.
 Also, we are fortunate to have the daily records of entrance gate released by local staff for data validation.
 ![Gate Records](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG)
 
-## Results of Occupancy History Reproduction
+## Validation of Occupancy History Reproduction
 Through the Simplfied Occupancy Corrector (SOC), the hourly occupancy history of each floor in the building can be calculated.
 
 The integrated daily occupancy of the whole building is validated by the entrance gate records to optimize the SOC coefficients.
@@ -58,7 +60,7 @@ Where the details of each floor can also be revealed from the reliable occupancy
 ![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
 
 
-# Predicting Occupancy Trend
+# Predictve Model for Hourly Occupancy Trend
 Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
 
 We try both ANN method (by tensorflow) and GBDT method (by lightgbm) for predicting the future occupancy trend.
