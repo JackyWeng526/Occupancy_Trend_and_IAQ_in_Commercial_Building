@@ -25,7 +25,7 @@ The air mass balance equation for the change in zone air CO<sub>2</sub> concentr
 ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
 
 We ignore some terms and import some default values to simplify the equation because of the following reasons:
-1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each office floor, thus we assume there is no zone exchange effect and ignore the second term in the right-hand side.
+1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each office floor, thus we assume there is no zone exchange effect and ignore the term 2 in the right-hand side.
 2. The variables of CO<sub>2</sub> concentration are collected by BAS for differences calculation.
 3. The default coefficients is provided by EnergyPlus and ASHRAE 62.1. They will then be optimized by data-driven analysis and linear regression.
 
