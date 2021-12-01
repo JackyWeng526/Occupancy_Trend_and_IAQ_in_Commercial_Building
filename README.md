@@ -60,7 +60,7 @@ Where the details of each floor can also be revealed from the reliable occupancy
 ![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
 
 
-# Predictve Model for Hourly Occupancy Trend
+## Predictve Model for Hourly Occupancy Trend
 Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
 
 We try both ANN method (by tensorflow) and GBDT method (by lightgbm) for predicting the future occupancy trend.
@@ -72,7 +72,7 @@ The algorithm, data quantity, variable selection, lag features, and future step 
 The optimal model proposed here can predict the hourly occupancy data for the next day based on the last 24-hour historical data. (As shown in the right part of the above figure.)
 
 
-# IAQ Prediction and Predictive Control Strategy Application
+# Results: IAQ Prediction and Predictive Control Strategy Application
 By means of occupancy trend predictions, we can estimate how much outdoor air volume should be supplied to the office floor referring to ASHRAE 62.1. 
 
 Based on the OA estimation, we are able to produce a predictive control strategy of AHU frequency converter derived from occupancy trend predictions.
