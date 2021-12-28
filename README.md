@@ -22,7 +22,8 @@ So, we try to utilize the BA data with [Carbon Dioxide Predictor-Corrector](http
 
 ## Simplfied Occupancy Corrector for Occupancy History (Ref: [EnergyPlus](https://bigladdersoftware.com/epx/docs/9-5/engineering-reference/index.html))
 The air mass balance equation for the change in zone air CO<sub>2</sub> concentration can be expressed as follows:
-![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![air mass balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/air_mass_balance_eq.PNG) -->
 
 We ignore some terms and import some default values to simplify the equation because of the following reasons:
 1. There is only two ventilation devices (AHU) handling IAQ of northen and sourthern zones in each office floor, thus we assume there is no zone exchange effect and ignore the term 2 in the right-hand side.
@@ -30,7 +31,8 @@ We ignore some terms and import some default values to simplify the equation bec
 3. The default coefficients is provided by EnergyPlus and ASHRAE 62.1. They will then be optimized by data-driven analysis and linear regression.
 
 Therefore, the equation of the Simplfied Occupancy Corrector is demonstrated below:
-![occ balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_balance_eq.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_balance_eq.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![occ balance equation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_balance_eq.PNG) -->
 
 With this equation and the following input data, we are able to reproduce the detailed occupancy history in the building.
 
@@ -38,13 +40,14 @@ With this equation and the following input data, we are able to reproduce the de
 The revelant dataset is originated from the existing BAS.
 
 We collect the data of AHUs and CO<sub>2</sub> sensors shown below.
-
-![AHU_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/AHU_data.PNG)
-
-![CO2_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/CO2_data.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/AHU_data.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![AHU_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/AHU_data.PNG) -->
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/CO2_data.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![CO2_data](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/CO2_data.PNG) -->
 
 Also, we are fortunate to have the daily records of entrance gate released by local staff for data validation.
-![Gate Records](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![Gate Records](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Gate_Record.PNG) -->
 
 ## Validation of Occupancy History Reproduction
 Through the Simplfied Occupancy Corrector (SOC), the hourly occupancy history of each floor in the building can be calculated.
@@ -52,20 +55,20 @@ Through the Simplfied Occupancy Corrector (SOC), the hourly occupancy history of
 The integrated daily occupancy of the whole building is validated by the entrance gate records to optimize the SOC coefficients.
 
 The preliminary outcome, with r<sup>2</sup> = 0.94 and MAE = 35.1 people, are plotted below.
-
-![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate_1.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate_1.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![PP_estimation](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_estimate_1.PNG) -->
 
 Where the details of each floor can also be revealed from the reliable occupancy history data.
-
-![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![PP_distribution](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Population_distribution.PNG) -->
 
 
 ## Predictve Model for Hourly Occupancy Trend
 Once we have the occupancy history with operation data of a building, we obtain the vital variables for the IAQ prediction and outdoor air optimization (OAO) strategy.
 
 We try both ANN method (by tensorflow) and GBDT method (by lightgbm) for predicting the future occupancy trend.
-
-![Occ_pred_model](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_pred_model.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_pred_model.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![Occ_pred_model](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Occ_pred_model.PNG) -->
 
 The algorithm, data quantity, variable selection, lag features, and future step of the target in this predictive occupancy model are currently optimized.
 
@@ -82,8 +85,8 @@ Correspondingly, the predicted indoor CO<sub>2</sub> can also be calculated by t
 (NO NEED to build another complicated model for CO<sub>2</sub> predictions!)
 
 The results are all demonstrated in the figure.
-
-![Predictive_Control_Analysis](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Predictive_Control_Analysis.PNG)
+<a href="url"><img src="https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Predictive_Control_Analysis.PNG" align="middle" height="70%" width="70%" ></a>
+<!-- ![Predictive_Control_Analysis](https://github.com/JackyWeng526/Occupancy_Trend_and_IAQ_in_Commercial_Building/blob/main/docs/Predictive_Control_Analysis.PNG) -->
 
 As we can see, if we implement the dynamic predictive control strategy which lowers the AHU frequency, we can have energy-saving potentials of AHU operations without compromising  IAQ and occupants' health and productivity. (Thanks to instructions in ASHRAE 62.1.)
 
